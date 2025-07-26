@@ -7,6 +7,10 @@ app provides an interface to look at in-game hands and minimally interact with t
 some parts of the game.
 
 ## Usage
+
+### Quick deployment
+
+Run `yarn deploy` for a guided setup that installs dependencies, runs migrations, builds the client and starts the server.
 Please refer to usage instructions in the [Steam workshop item](https://steamcommunity.com/sharedfiles/filedetails/?id=2085044664).
 
 ## Contribution
@@ -14,11 +18,11 @@ Please refer to usage instructions in the [Steam workshop item](https://steamcom
 This is a NodeJS web app built on top of Express, React, and Websocket, with Postgres as the database.
 
 The minimum requirements are NodeJs, Yarn, and Postgres. You will need to create a Postgres DB and store the connection
-URI in the environment variable `DATABASE_URL`. The lua file has code mirroring what is in the Workshop item - for
+URI in the environment variable `DATABASE_URL`. See `.env.example` for a template. The lua file has code mirroring what is in the Workshop item - for
 development, replace the herokuapp URL with `http://localhost:8000` at the top.
 
 Developers must use `yarn install` after cloning the repository to populate the required dependencies. Afterwards, run
-`node server/server.js` to launch the server and `yarn start` to launch the React development server.
+`node server/server.js` to launch the server and `yarn start` to launch the React development server. Alternatively, run `yarn deploy` for a guided setup and to start the server.
 
 ### Pull Requests
 Pull Requests must target the `master` branch.

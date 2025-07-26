@@ -10,9 +10,11 @@
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
     "cached-request": "^2.0.1",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "http": "^0.0.1-security",
     "http-delayed-response": "^0.0.4",
+    "inquirer": "^7.0.0",
     "pg": "^8.0.3",
     "pg-hstore": "^2.3.3",
     "pure-react-carousel": "^1.27.1",
@@ -27,6 +29,7 @@
     "websocket": "^1.0.31"
   },
   "scripts": {
+    "deploy": "node deploy.js",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
