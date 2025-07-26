@@ -10,7 +10,7 @@ some parts of the game.
 
 ### Quick deployment
 
-Run `yarn deploy` for a guided setup that installs dependencies, runs migrations, builds the client and starts the server.
+Run `yarn deploy` for a guided setup that installs dependencies, runs migrations, builds the client and starts the server. The script writes a `.env` file and also assigns `process.env.DATABASE_URL` and `process.env.PORT`, ensuring migrations and the server inherit these values.
 Please refer to usage instructions in the [Steam workshop item](https://steamcommunity.com/sharedfiles/filedetails/?id=2085044664).
 
 ## Contribution

@@ -24,19 +24,26 @@ async function main() {
   fs.writeFileSync('.env', envContent);
   console.log('Created .env file.');
 
+  // Update process.env so subsequent commands inherit these values
+  process.env.DATABASE_URL = answers.database;
+  process.env.PORT = answers.port;
+
   console.log('Installing dependencies...');
   execSync('yarn install', { stdio: 'inherit' });
 
   console.log('Running database migrations...');
-  execSync('npx sequelize-cli db:migrate', { stdio: 'inherit' });
+  execSync('npx sequelize-cli db:migrate', {
+    stdio: 'inherit',
+    env: { ...process.env }
+  });
 
   console.log('Building client...');
-  execSync('yarn build', { stdio: 'inherit' });
+  execSync('yarn build', { stdio: 'inherit', env: { ...process.env } });
 
   console.log('Starting server...');
   execSync('node server/server.js', {
     stdio: 'inherit',
-    env: { ...process.env, DATABASE_URL: answers.database, PORT: answers.port }
+    env: { ...process.env }
   });
 }
 
